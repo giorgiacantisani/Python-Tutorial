@@ -74,8 +74,6 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
 
  --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data      science project template</a>. #cookiecutterdatascience</small></p>
-
 
 ### Virtual Environment pt1
 3. set up a virtual environment, named `venv`, specifying the python version.

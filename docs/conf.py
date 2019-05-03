@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# MAD-EEG documentation build configuration file, created by
+# Python-Tutorial documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MAD-EEGdoc'
+htmlhelp_basename = 'Python-Tutorialdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -184,8 +184,8 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
     ('index',
-     'MAD-EEG.tex',
-     u'MAD-EEG Documentation',
+     'Python-Tutorial.tex',
+     u'Python-Tutorial Documentation',
      u"Cantisani Giorgia", 'manual'),
 ]
 
@@ -215,7 +215,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'MAD-EEG', u'MAD-EEG Documentation',
+    ('index', 'Python-Tutorial', u'Python-Tutorial Documentation',
      [u"Cantisani Giorgia"], 1)
 ]
 
@@ -229,9 +229,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'MAD-EEG', u'MAD-EEG Documentation',
-     u"Cantisani Giorgia", 'MAD-EEG',
-     'MAD-EEG: an EEG dataset for decoding auditory attention to a target instrument in polyphonic music', 'Miscellaneous'),
+    ('index', 'Python-Tutorial', u'Python-Tutorial Documentation',
+     u"Cantisani Giorgia", 'Python-Tutorial',
+     'Python-Tutorial for Cookiecutter and Sacred', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.

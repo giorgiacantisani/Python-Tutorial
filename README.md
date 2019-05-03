@@ -129,13 +129,13 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     (venv) $
     ```
 
-7a. Install the basic dependencies of cookiecutter (if you want). Notice that doing so also you will install the src package by default. Then install your everyday-coding-favorite-life packages: numpy, matplotlib, jupyter
+ 7a. Install the basic dependencies of cookiecutter (if you want). Notice that doing so also you will install the src package by default. Then install your everyday-coding-favorite-life packages: numpy, matplotlib, jupyter
 
     ```bash
     (venv) $ pip install -r requirements.txt
     (venv) $ pip install numpy matplotlib jupyter
     ```
-7b. I can also inatall the src package as editable
+ 7b. I can also inatall the src package as editable
 
    ```bash
    $ pip install -e .

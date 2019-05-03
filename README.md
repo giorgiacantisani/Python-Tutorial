@@ -136,11 +136,11 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     (venv) $ pip install -r requirements.txt
     (venv) $ pip install numpy matplotlib jupyter
     ```
-   You can also inatall the src package as editable
+    You can also inatall the src package as editable
 
-   ```bash
-   $ pip install -e .
-   ```
+    ```bash
+    $ pip install -e .
+    ```
 
 8. Freeze the requirements ('>' overwrite, '>>' append)
 

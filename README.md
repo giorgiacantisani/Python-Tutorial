@@ -1,4 +1,4 @@
-Python Kickstart: Tutorial for Cookiecutter and Sacred
+Python Tutorial for Cookiecutter and Sacred
 ==============================
 
 ## Part 1: Coockiecutter

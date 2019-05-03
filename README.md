@@ -1,8 +1,28 @@
-Python Kickstart
+Python Kickstart: Tutorial for Cookiecutter and Sacred
 ==============================
 
-Tutorial for Cookiecutter and Sacred
+## Part 1: Coockiecutter, git and virtualenv
+### Cookiecutter
+1. Install [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/readme.html?highlight=data%20science) in your system/user python profile (not a virtual environment).
 
+    ```bash
+    $ pip install --user cookiecutter
+    ```
+
+2. Surf the file system until your code folder (e.g. `path/to/repos_folder`). This is the parent folder of your code.
+**NB: cookiecutter will create a new folder `project_name` with everything inside. Your actual code will be in a subfolder, i.e. `path/to/repos_folder/project_name/src/`**
+Then run `cookiecutter` with the link to the  [data-science-template](https://github.com/drivendata/cookiecutter-data-science) and prompt the question it will ask you:
+
+    ```bash
+    $ cd Documents/xxx/xxx/Code/
+    $ cookiecutter https://github.com/drivendata/cookiecutter-data-science
+    # fill the question using project name: kickstart_python
+    # once it is finished, cd the forder kickstart_python
+    $ cd kickstart_python
+    ```
+    **From now on, our current directory will be `path/to/kickstarn_python/`** unless specified
+    
+    
 Project Organization
 ------------
 
@@ -56,30 +76,6 @@ Project Organization
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 
-
-
-# KICKSTART YOUR PYTHON PROJECT
-
-## Part 1: Coockiecutter, git and virtualenv
-### Cookiecutter
-1. Install [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/readme.html?highlight=data%20science) in your system/user python profile (not a virtual environment).
-
-    ```bash
-    $ pip install --user cookiecutter
-    ```
-
-2. Surf the file system until your code folder (e.g. `path/to/repos_folder`). This is the parent folder of your code.
-**NB: cookiecutter will create a new folder `project_name` with everything inside. Your actual code will be in a subfolder, i.e. `path/to/repos_folder/project_name/src/`**
-Then run `cookiecutter` with the link to the  [data-science-template](https://github.com/drivendata/cookiecutter-data-science) and prompt the question it will ask you:
-
-    ```bash
-    $ cd Documents/xxx/xxx/Code/
-    $ cookiecutter https://github.com/drivendata/cookiecutter-data-science
-    # fill the question using project name: kickstart_python
-    # once it is finished, cd the forder kickstart_python
-    $ cd kickstart_python
-    ```
-    **From now on, our current directory will be `path/to/kickstarn_python/`** unless specified
 
 ### Virtual Environment pt1
 3. set up a virtual environment, named `venv`, specifying the python version.

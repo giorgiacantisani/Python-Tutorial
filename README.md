@@ -1,7 +1,7 @@
-MAD-EEG
+Python Kickstart
 ==============================
 
-MAD-EEG: an EEG dataset for decoding auditory attention to a target instrument in polyphonic music
+Tutorial for Cookiecutter and Sacred
 
 Project Organization
 ------------

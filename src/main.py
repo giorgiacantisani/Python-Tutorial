@@ -37,9 +37,9 @@ def run(_run, C, gamma):
         # Implicit step counter (0, 1, 2, 3, ...)
         # incremented with each call for training.accuracy:
         _run.log_scalar("training.accuracy", value * 2)
+
         # Another option is to use the Experiment object (must be running)
         # The training.diff has its own step counter (0, 1, 2, ...) too
         ex.log_scalar("training.diff", value * 2)
+
     return score
-
-

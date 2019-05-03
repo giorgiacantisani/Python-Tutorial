@@ -1,5 +1,6 @@
 Python Tutorial for Cookiecutter and Sacred
 ==============================
+You can find more details here: https://docs.google.com/presentation/d/18KcMNFgHG4l0dX--r6YQowwdL2zLod5xj4lTHPr6pVY/edit?usp=sharing
 
 ## Part 1: Coockiecutter
 1. Install [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/readme.html?highlight=data%20science) in your system/user python profile (not a virtual environment).

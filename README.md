@@ -1,8 +1,7 @@
 Python Kickstart: Tutorial for Cookiecutter and Sacred
 ==============================
 
-## Part 1: Coockiecutter, git and virtualenv
-### Cookiecutter
+## Part 1: Coockiecutter
 1. Install [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/readme.html?highlight=data%20science) in your system/user python profile (not a virtual environment).
 
     ```bash
@@ -17,6 +16,7 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     $ cd Documents/xxx/xxx/Code/
     $ cookiecutter https://github.com/drivendata/cookiecutter-data-science
     # fill the question using project name: kickstart_python
+    # then it will ask you about the author's name, the license, the python interpreter, a brief description of the project.
     # once it is finished, cd the forder kickstart_python
     $ cd kickstart_python
     ```
@@ -79,7 +79,6 @@ Project Organization
 
 ### Virtual Environment pt1
 3. set up a virtual environment, named `venv`, specifying the python version.
-   `venv` is a typical convention, you could call it `remi` if you want.
    This code will create a folder named `venv` containing lot of things and a **local copy of all the packages** you will pip-install from now on.
 
     ```bash
@@ -91,9 +90,13 @@ Project Organization
     ```bash
     $ echo venv >> .gitignore
     ```
+5. if you use conda:
+   ```bash
+   $ conda create -n venv python=3 
+   ```
 
 ### GIT
-5. set up git and link it to a new github/gitlab reporitory:
+5. set up git and link it to a new github reporitory:
     1. On [github.com](https://github.com/) create an **empty** reporitory online (it means no README and no license. If you do so it will display usefull command).
     2. Start git locally and synch it with the following commands:
 
@@ -112,6 +115,8 @@ Project Organization
     # avoid writing login and password for the future time
     $ git config credential.helper store
     ```
+    3. If you have Windows use GitHub Desktop
+    
 ### Virtual Environment pt2
 6. Activate the virtualenv
 
@@ -120,13 +125,23 @@ Project Organization
     # check that it is activated. You should have (venv) at the beginnig of your command line
     (venv) [user@localhost] project_name/ $
     ```
+    if you use conda you don't have to care to be in the right folder:
+    ```bash
+    $ conda activate venv
+    (venv) $
+    ```
 
-7. Install the basic dependencies of cookiecutter (if you want). Notice that doing so also you will install the src package by default. Then install your everyday-coding-favorite-life packages: numpy, matplotlib, jupyter
+7a. Install the basic dependencies of cookiecutter (if you want). Notice that doing so also you will install the src package by default. Then install your everyday-coding-favorite-life packages: numpy, matplotlib, jupyter
 
     ```bash
     (venv) $ pip install -r requirements.txt
     (venv) $ pip install numpy matplotlib jupyter
     ```
+7b. I can also inatall the src package as editable
+
+   ```bash
+   $ pip install -e .
+   ```
 
 8. Freeze the requirements ('>' overwrite, '>>' append)
 
@@ -267,7 +282,8 @@ In both of the files (actually python modules) create new function respectively
     ```bash
     (venv) $ python src/main.py -m MY_IRIS_EXP
     ```
-    notice how the ID value increase at each run
+    notice how the ID value increase at each run.
+    Now we have also an "observer" to our sacred experiment. 
 
 21. In a mongo shell (just run mongo in the command line) check if the MY_IRIS_EXP database exists
 
@@ -278,7 +294,8 @@ In both of the files (actually python modules) create new function respectively
     # look for MY_IRIS_EXP entry
     ```
 
-22. download and install [Ominboard](https://github.com/vivekratnavel/omniboard), the sacred+mongo frontends
+22. download and install [Ominboard](https://github.com/vivekratnavel/omniboard), the sacred+mongo frontends 
+    N.B. npm is a Javascript package manager. You will probably need to install it (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
     ```bash
     # in a new terminal

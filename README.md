@@ -23,8 +23,8 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     **From now on, our current directory will be `path/to/kickstarn_python/`** unless specified
     
     
-   Project Organization
-   ------------
+ Project Organization
+ ------------
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
@@ -72,9 +72,9 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
 
 
-    --------
+ --------
 
-   <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data      science project template</a>. #cookiecutterdatascience</small></p>
+<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data      science project template</a>. #cookiecutterdatascience</small></p>
 
 
 ### Virtual Environment pt1

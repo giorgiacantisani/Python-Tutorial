@@ -15,12 +15,12 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     ```bash
     $ cd Documents/xxx/xxx/Code/
     $ cookiecutter https://github.com/drivendata/cookiecutter-data-science
-    # fill the question using project name: kickstart_python
+    # fill the question using project name: project_name
     # then it will ask you about the author's name, the license, the python interpreter, a brief description of the project.
-    # once it is finished, cd the forder kickstart_python
-    $ cd kickstart_python
+    # once it is finished, cd the forder project_name
+    $ cd project_name
     ```
-    **From now on, our current directory will be `path/to/kickstarn_python/`** unless specified
+    **From now on, our current directory will be `path/to/project_name/`** unless specified
     
     
  Project Organization
@@ -107,7 +107,7 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     $ git commit -m "first commit"
 
     # If github
-    $ git remote add origin https://github.com/USER/python_kickstart.git
+    $ git remote add origin https://github.com/USER/project_name.git
 
     $ git push -u origin master
     # avoid writing login and password for the future time

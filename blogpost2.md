@@ -8,34 +8,27 @@ author-id: giorgia
 background: /img/blog_images/giorgia/sfondo.jpg
 ---
 
-There are times ....
+What I mostly learned during this first year of Ph.D. is that in Data Science how we organize and structure our projects is foundamental for doing good and **reproducibile** science. What I also learned is that the time is usually very limited to come up with something meaningful to the next deadline you need to be quick and **efficient**. 
 
-the ideal workflow for your data science project would be:
+Coding with Python can be done in many different ways but the _quick-and-dirty_ way may be good for small scale experiment or proofs of concept. For long term projects this may turn into caothic follders where you are scared to look in even after the weekend.  
+In this post I will explain how to quick install and use some tools which will help you to organize your Data Science projects without the need of a degree in Computer Science. 
+
+The ideal workflow you should hqve in mind for your data science projectshould be:
+1. Organize it
 1. Keep track of your changes
-2. … make it reproducible and system independent
-3. … organize it
-4. … keep track of the experiments.
+2. Make it reproducible and system independent
+4. Keep track of the experiments.
 
 
 ## Part 1: Coockiecutter organizes it
 
-Cookiecutter is a great tool that answers the followings:
+[Cookiecutter](https://cookiecutter.readthedocs.io) is a great tool that answers the followings:
 - how should I structure my project?
 - how did I structure my project one year ago? How will I tomorrow?
-- how should I structure my project if I want to release a code which can be pip-install-ed
+- how should I structure my project if I want to release a code which can be pip-install-ed?
 - how to import my functions easily in my future projects? and in notebooks?
 
-To be picki Cookiecutter is …
-	_command-line utility that creates projects from project templates
-	e.g. creating a Python package project from a Python package project template._
-
-what in practice we need to know is that it deploys folders that allow you to organize yourself and control your data sources.
-
-Documentation: https://cookiecutter.readthedocs.io
-
-Templates:
-- gh:drivendata/cookiecutter-data-science
-- gh:mkrapp/cookiecutter-reproducible-science
+It is a command-line utility that creates projects from project templates (e.g. creating a Python package project from a Python package project template). In practice it deploys folders that allow you to organize yourself and control your data sources.
 
 Features:
 - Cross-platform: Windows, Mac, and Linux are officially supported
@@ -64,8 +57,8 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     ```
     **From now on, our current directory will be `path/to/project_name/`** unless specified
 
-
- Your project organization will look like this:
+ Now your project organization will look like this:
+ 
  ------------
 
     ├── LICENSE
@@ -116,7 +109,7 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
 
  --------
 
- This allows to
+ This project organization allows to
  - raw data has an immutable folder to live in.
  - no more accidentally saving over the raw data
  - no more dataV1.csv or finalV1.csv,  because everything is in its own place.
@@ -124,8 +117,8 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
 And it's time also to get all your functions in:
 - write all the functions in .src/ (with the structure we want)
 - Import the function we want in the script ./src/main.py with a nice and clean (so understandable) structure.
- 	- from data.make_dataset import bellaciao
- 	- from models.predict_model import *
+ 	- ```python from data.make_dataset import bellaciao```
+ 	- ```python from models.predict_model import * ``
 
 ISSUE: 	I have cells all over my notebooks/scripts with custom functions…
             what if I would later use them in the project or another notebook?
@@ -136,9 +129,10 @@ ISSUE: 	I have cells all over my notebooks/scripts with custom functions…
  all the functions can be called easily in notebooks and installed in other projects.
 
 
- If you don't like this template don't worry, there are many many others: just google them. You can also create your own template (not really immediate tough - need jinja2)
- Check out this research project, which successfully applied the cookiecutter philosophy:
- 	[SEMIC: an efficient surface energy and mass balance model applied to the Greenland ice sheet](https://gitlab.pik-potsdam.de/krapp/semic-project)
+ If you don't like this template don't worry, there are many many others: just google themn (e.g. [data-science](gh:drivendata/cookiecutter-data-science), [reproducible-science](gh:mkrapp/cookiecutter-reproducible-science)).
+ You can also create your own template (not really immediate tough - need jinja2)
+ 
+ Check out this research project, which successfully applied the cookiecutter philosophy: [SEMIC: an efficient surface energy and mass balance model applied to the Greenland ice sheet](https://gitlab.pik-potsdam.de/krapp/semic-project)
 
 
 ### Virtual Environment pt1

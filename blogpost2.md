@@ -8,24 +8,24 @@ author-id: giorgia
 background: /img/blog_images/giorgia/sfondo.jpg
 ---
 
-What I mostly learned during this first year of Ph.D. is that in Data Science how we organize and structure our projects is foundamental for doing good and **reproducibile** science. What I also learned is that the time is usually very limited to come up with something meaningful to the next deadline you need to be quick and **efficient**. 
+What I mostly learned during this first year of Ph.D. is that in Data Science how we organize and structure our projects is fundamental for doing good and **reproducible** science. What I also learned is that the time is usually very limited to come up with something meaningful to the next deadline you need to be quick and **efficient**.
 
-Coding with Python can be done in many different ways but the _quick-and-dirty_ way may be good for small scale experiment or proofs of concept. For long term projects this may turn into caothic follders where you are scared to look in even after the weekend.  
-In this post I will explain how to quick install and use some tools which will help you to organize your Data Science projects without the need of a degree in Computer Science. 
+Coding with Python can be done in many different ways but the _quick-and-dirty_ way may be good for small scale experiment or proofs of concept. For long term projects this may turn into chaotic folders where you are scared to look in even after the weekend.  
+In this post I will explain how to quick install and use some tools which will help you to organize your Data Science projects without the need of a degree in Computer Science.
 
-The ideal workflow you should hqve in mind for your data science projectshould be:
+The ideal workflow you should have always in mind is:
 1. Organize it
 1. Keep track of your changes
 2. Make it reproducible and system independent
 4. Keep track of the experiments.
 
 
-## Part 1: Coockiecutter organizes it
+### Coockiecutter organizes it
 
 [Cookiecutter](https://cookiecutter.readthedocs.io) is a great tool that answers the followings:
 - how should I structure my project?
 - how did I structure my project one year ago? How will I tomorrow?
-- how should I structure my project if I want to release a code which can be pip-install-ed?
+- how should I structure my project if I want to release a code which can be _pip-install-ed_?
 - how to import my functions easily in my future projects? and in notebooks?
 
 It is a command-line utility that creates projects from project templates (e.g. creating a Python package project from a Python package project template). In practice it deploys folders that allow you to organize yourself and control your data sources.
@@ -57,9 +57,8 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     ```
     **From now on, our current directory will be `path/to/project_name/`** unless specified
 
- Now your project organization will look like this:
- 
- ------------
+ 		Now your project organization will look like this:
+ 		------------
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
@@ -106,54 +105,40 @@ Then run `cookiecutter` with the link to the  [data-science-template](https://gi
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
 
+ 		--------
 
- --------
+ 		This project organization allows to
+ 	- raw data has an immutable folder to live in and no more accidentally saving over the raw data
+ 	- no more dataV1.csv or finalV1.csv,  because everything is in its own place.
+	- write all the functions in .src/ (with the structure we want) and install src as an editable package
+	- Import the function we want in notebooks or from other projects with a nice and clean (so understandable) structure.
+ 		- ```python from src.data.make_dataset import bellaciao```
+ 		- ```python from src.models.predict_model import * ```
 
- This project organization allows to
- - raw data has an immutable folder to live in.
- - no more accidentally saving over the raw data
- - no more dataV1.csv or finalV1.csv,  because everything is in its own place.
-
-And it's time also to get all your functions in:
-- write all the functions in .src/ (with the structure we want)
-- Import the function we want in the script ./src/main.py with a nice and clean (so understandable) structure.
- 	- ```python from data.make_dataset import bellaciao```
- 	- ```python from models.predict_model import * ``
-
-ISSUE: 	I have cells all over my notebooks/scripts with custom functions…
-            what if I would later use them in the project or another notebook?
- ⇒ Now with cookiecutter we can
-
- src can be installed as an editable package  
-
- all the functions can be called easily in notebooks and installed in other projects.
-
-
- If you don't like this template don't worry, there are many many others: just google themn (e.g. [data-science](gh:drivendata/cookiecutter-data-science), [reproducible-science](gh:mkrapp/cookiecutter-reproducible-science)).
+ If you don't like this template don't worry, there are many many others: just google them (e.g. [data-science](gh:drivendata/cookiecutter-data-science), [reproducible-science](gh:mkrapp/cookiecutter-reproducible-science)).
  You can also create your own template (not really immediate tough - need jinja2)
- 
+
  Check out this research project, which successfully applied the cookiecutter philosophy: [SEMIC: an efficient surface energy and mass balance model applied to the Greenland ice sheet](https://gitlab.pik-potsdam.de/krapp/semic-project)
 
 
-### Virtual Environment pt1
+### Virtual Environment and GIT
 3. set up a virtual environment, named `venv`, specifying the python version.
    This code will create a folder named `venv` containing lot of things and a **local copy of all the packages** you will pip-install from now on.
 
     ```bash
     $ virtualenv venv -p python3
     ```
+		if you use conda:
+		```bash
+		$ conda create -n venv python=3
+		```
 
 4. edit the `.gitignore`  by adding the virtualenv's folder with you favorite text editor or just run the following command
 
     ```bash
     $ echo venv >> .gitignore
     ```
-5. if you use conda:
-   ```bash
-   $ conda create -n venv python=3
-   ```
 
-### GIT
 5. set up git and link it to a new github reporitory:
     1. On [github.com](https://github.com/) create an **empty** reporitory online (it means no README and no license. If you do so it will display usefull command).
     2. Start git locally and synch it with the following commands:
@@ -175,7 +160,6 @@ ISSUE: 	I have cells all over my notebooks/scripts with custom functions…
     ```
     3. If you have Windows use GitHub Desktop
 
-### Virtual Environment pt2
 6. Activate the virtualenv
 
     ```bash
@@ -291,7 +275,7 @@ In both of the files (actually python modules) create new function respectively
     (venv) $ python src/main.py
     ```
 
-### Sacred
+### Sacred tracks the experiments
 15. PIP-install [Sacred](https://github.com/IDSIA/sacred) for tracking experiments
 
     ```bash
